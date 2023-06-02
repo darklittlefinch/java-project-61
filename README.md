@@ -3,5 +3,9 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/8a1ef4004fd96354979b/maintainability)](https://codeclimate.com/github/darklittlefinch/java-project-61/maintainability)
 
+# Even game asciicema
 https://asciinema.org/a/6x8TFSOu3YRmRNinYmjAYwsnq
+
+# Calc game asciinema
+https://asciinema.org/a/r0kaZMDk0vjgZXUy7e618NNeJ
 
