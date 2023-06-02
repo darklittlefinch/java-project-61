@@ -16,10 +16,7 @@ public class Even {
     public static void startEven() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = Cli.getName();
-        System.out.println("Hello, " + name + "!");
+        var userName = Cli.startGreet();
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
@@ -37,12 +34,12 @@ public class Even {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + name + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
         }
 
-        System.out.println("Congratulations, " + name + "!");
+        System.out.println("Congratulations, " + userName + "!");
         scanner.close();
         return;
     }

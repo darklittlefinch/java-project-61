@@ -19,13 +19,11 @@ public class App {
 
         switch (gameNumber) {
             case 1:
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String name = Cli.getName();
-                System.out.println("Hello, " + name + "!");
+                Cli.startGreet();
                 break;
             case 2:
                 Even.startEven();
+                break;
             case 0:
                 break;
             default:
