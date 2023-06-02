@@ -1,8 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import java.util.Scanner;
 import java.util.Random;
+import hexlet.code.Engine;
 
 public class Even {
     public static String isEven(int number) {
@@ -13,6 +12,7 @@ public class Even {
         return "no";
     }
 
+    /*
     public static void startEven() {
         Scanner scanner = new Scanner(System.in);
 
@@ -42,5 +42,24 @@ public class Even {
         System.out.println("Congratulations, " + userName + "!");
         scanner.close();
         return;
+    }
+     */
+
+    public static void startEven() {
+        var rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+        var questionsCount = 3;
+        String[] questions = new String[questionsCount];
+        String[] correctAnswers = new String[questionsCount];
+
+        Random random = new Random();
+
+        for (var i = 0; i < questionsCount; i++) {
+            var number = random.nextInt(100);
+            questions[i] = Integer.toString(number);
+            correctAnswers[i] = isEven(number);
+        }
+
+        Engine.startGame(rules, questions, correctAnswers);
     }
 }
