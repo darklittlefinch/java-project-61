@@ -17,18 +17,17 @@ public class Gcd {
         return gcd;
     }
 
-    public static void startGCD() {
+    public static void startGCD(int questionsCount) {
         var rules = "Find the greatest common divisor of given numbers.";
-
-        var questionsCount = 3;
         String[] questions = new String[questionsCount];
         String[] correctAnswers = new String[questionsCount];
 
         Random random = new Random();
+        var maxNumber = 50;
 
         for (var i = 0; i < questionsCount; i++) {
-            var firstNumber = random.nextInt(50);
-            var secondNumber = random.nextInt(50);
+            var firstNumber = random.nextInt(maxNumber);
+            var secondNumber = random.nextInt(maxNumber);
 
             questions[i] = firstNumber + " " + secondNumber;
 

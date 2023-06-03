@@ -13,17 +13,16 @@ public class Even {
         return "no";
     }
 
-    public static void startEven() {
+    public static void startEven(int questionsCount) {
         var rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-
-        var questionsCount = 3;
         String[] questions = new String[questionsCount];
         String[] correctAnswers = new String[questionsCount];
 
         Random random = new Random();
+        var maxNumber = 100;
 
         for (var i = 0; i < questionsCount; i++) {
-            var number = random.nextInt(100);
+            var number = random.nextInt(maxNumber);
             questions[i] = Integer.toString(number);
             correctAnswers[i] = isEven(number);
         }

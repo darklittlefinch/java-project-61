@@ -8,24 +8,25 @@ public class Calc {
     public static String getOperator() {
         String[] operators = {"+", "-", "*"};
 
+        var operatorsCount = 3;
         Random random = new Random();
-        var randomNumber = random.nextInt(3);
+        var randomNumber = random.nextInt(operatorsCount);
 
         return operators[randomNumber];
     }
 
-    public static void startCalc() {
+    public static void startCalc(int questionsCount) {
         var rules = "What is the result of the expression?";
 
-        var questionsCount = 3;
         String[] questions = new String[questionsCount];
         String[] correctAnswers = new String[questionsCount];
 
         Random random = new Random();
+        var maxNumber = 20;
 
         for (var i = 0; i < questionsCount; i++) {
-            var firstNumber = random.nextInt(20);
-            var secondNumber = random.nextInt(20);
+            var firstNumber = random.nextInt(maxNumber);
+            var secondNumber = random.nextInt(maxNumber);
             var operator = getOperator();
 
             questions[i] = firstNumber + " " + operator + " " + secondNumber;

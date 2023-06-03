@@ -10,40 +10,49 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        var questionsCount = 3;
 
         System.out.println("Please enter the game number and press Enter.");
 
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("3 - Calc");
-        System.out.println("4 - GCD");
-        System.out.println("5 - Progression");
-        System.out.println("6 - Prime");
-        System.out.println("0 - Exit");
+        final var greet = 1;
+        final var even = 2;
+        final var calc = 3;
+        final var gcd = 4;
+        final var progression = 5;
+        final var prime = 6;
+        final var exit = 0;
+
+        System.out.println(greet + " - Greet");
+        System.out.println(even + " - Even");
+        System.out.println(calc + " - Calc");
+        System.out.println(gcd + " - GCD");
+        System.out.println(progression + " - Progression");
+        System.out.println(prime + " - Prime");
+        System.out.println(exit + " - Exit");
 
         System.out.print("Your choice: ");
         int gameNumber = scanner.nextInt();
 
         switch (gameNumber) {
-            case 1:
+            case greet:
                 Cli.startGreet();
                 break;
-            case 2:
-                Even.startEven();
+            case even:
+                Even.startEven(questionsCount);
                 break;
-            case 3:
-                Calc.startCalc();
+            case calc:
+                Calc.startCalc(questionsCount);
                 break;
-            case 4:
-                Gcd.startGCD();
+            case gcd:
+                Gcd.startGCD(questionsCount);
                 break;
-            case 5:
-                Progression.startProgression();
+            case progression:
+                Progression.startProgression(questionsCount);
                 break;
-            case 6:
-                Prime.startPrime();
+            case prime:
+                Prime.startPrime(questionsCount);
                 break;
-            case 0:
+            case exit:
                 break;
             default:
                 System.out.println("Something went wrong");

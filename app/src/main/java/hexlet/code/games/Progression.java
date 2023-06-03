@@ -12,17 +12,21 @@ public class Progression {
         // generating a number from 5 to 10
         // to do it, first generating a number from 5 to 10
         // then adding to this number 5
-        var numbersCount = random.nextInt(6) + 5;
+        var range = 6;
+        var minNumber = 5;
+        var numbersCount = random.nextInt(range) + minNumber;
 
         String[] numbers = new String[numbersCount];
 
         // generating the first number excepting 0 to have more fun :)
-        var number = random.nextInt(20) + 1;
+        var maxNumberOfFirst = 20;
+        var number = random.nextInt(maxNumberOfFirst) + 1;
         numbers[0] = Integer.toString(number);
 
         // generating a progression step excepting 0 too
         // otherwise all the numbers will be equals
-        var step = random.nextInt(10) + 1;
+        var maxNumberOfStep = 10;
+        var step = random.nextInt(maxNumberOfStep) + 1;
 
         for (var i = 1; i < numbers.length; i++) {
             numbers[i] = Integer.toString(number + step);
@@ -32,10 +36,8 @@ public class Progression {
         return numbers;
     }
 
-    public static void startProgression() {
+    public static void startProgression(int questionsCount) {
         var rules = "What number is missing in the progression?";
-
-        var questionsCount = 3;
         String[] questions = new String[questionsCount];
         String[] correctAnswers = new String[questionsCount];
 

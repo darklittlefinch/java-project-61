@@ -22,17 +22,16 @@ public class Prime {
         }
     }
 
-    public static void startPrime() {
+    public static void startPrime(int questionsCount) {
         var rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
-        var questionsCount = 3;
         String[] questions = new String[questionsCount];
         String[] correctAnswers = new String[questionsCount];
 
         Random random = new Random();
+        var maxNumber = 100;
 
         for (var i = 0; i < questionsCount; i++) {
-            var number = random.nextInt(100) + 1;
+            var number = random.nextInt(maxNumber) + 1;
 
             questions[i] = Integer.toString(number);
             correctAnswers[i] = isPrime(number);
