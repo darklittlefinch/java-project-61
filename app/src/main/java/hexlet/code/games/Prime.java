@@ -4,6 +4,7 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Prime {
+    // метод, определяющий, является ли число простым
     public static String isPrime(int number) {
         var dividersCount = 0;
 

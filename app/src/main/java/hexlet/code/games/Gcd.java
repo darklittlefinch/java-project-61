@@ -4,6 +4,7 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Gcd {
+    // метод, находящий НОД двух чисел
     public static int findGCD(int firstNumber, int secondNumber) {
         var gcd = 1;
 
