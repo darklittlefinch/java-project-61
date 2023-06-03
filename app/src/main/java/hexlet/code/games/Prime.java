@@ -28,7 +28,7 @@ public class Prime {
         String[] correctAnswers = new String[questionsCount];
 
         Random random = new Random();
-        var maxNumber = 100;
+        final var maxNumber = 100;
 
         for (var i = 0; i < questionsCount; i++) {
             var number = random.nextInt(maxNumber) + 1;

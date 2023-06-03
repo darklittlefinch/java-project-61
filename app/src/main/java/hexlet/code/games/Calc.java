@@ -8,7 +8,7 @@ public class Calc {
     public static String getOperator() {
         String[] operators = {"+", "-", "*"};
 
-        var operatorsCount = 3;
+        final var operatorsCount = 3;
         Random random = new Random();
         var randomNumber = random.nextInt(operatorsCount);
 
@@ -22,7 +22,7 @@ public class Calc {
         String[] correctAnswers = new String[questionsCount];
 
         Random random = new Random();
-        var maxNumber = 20;
+        final var maxNumber = 20;
 
         for (var i = 0; i < questionsCount; i++) {
             var firstNumber = random.nextInt(maxNumber);

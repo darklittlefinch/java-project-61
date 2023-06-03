@@ -12,20 +12,20 @@ public class Progression {
         // generating a number from 5 to 10
         // to do it, first generating a number from 5 to 10
         // then adding to this number 5
-        var range = 6;
-        var minNumber = 5;
+        final var range = 6;
+        final var minNumber = 5;
         var numbersCount = random.nextInt(range) + minNumber;
 
         String[] numbers = new String[numbersCount];
 
         // generating the first number excepting 0 to have more fun :)
-        var maxNumberOfFirst = 20;
+        final var maxNumberOfFirst = 20;
         var number = random.nextInt(maxNumberOfFirst) + 1;
         numbers[0] = Integer.toString(number);
 
         // generating a progression step excepting 0 too
         // otherwise all the numbers will be equals
-        var maxNumberOfStep = 10;
+        final var maxNumberOfStep = 10;
         var step = random.nextInt(maxNumberOfStep) + 1;
 
         for (var i = 1; i < numbers.length; i++) {

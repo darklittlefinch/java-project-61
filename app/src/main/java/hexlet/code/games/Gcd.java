@@ -23,7 +23,7 @@ public class Gcd {
         String[] correctAnswers = new String[questionsCount];
 
         Random random = new Random();
-        var maxNumber = 50;
+        final var maxNumber = 50;
 
         for (var i = 0; i < questionsCount; i++) {
             var firstNumber = random.nextInt(maxNumber);

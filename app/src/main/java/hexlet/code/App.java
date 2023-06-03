@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        var questionsCount = 3;
+        final var questionsCount = 3;
 
         System.out.println("Please enter the game number and press Enter.");
 
