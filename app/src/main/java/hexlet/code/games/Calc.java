@@ -4,7 +4,7 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Calc {
-    // метод, возращающий случайный оператор
+    // method returning random operator
     public static String getOperator() {
         String[] operators = {"+", "-", "*"};
 

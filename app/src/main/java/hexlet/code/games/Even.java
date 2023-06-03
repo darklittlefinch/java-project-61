@@ -4,7 +4,7 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Even {
-    // метод, определяющий, является ли число чётным
+    // method determining is number even
     public static String isEven(int number) {
         var remainder = number % 2;
         if (remainder == 0) {

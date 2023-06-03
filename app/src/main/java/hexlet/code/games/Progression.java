@@ -4,24 +4,24 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Progression {
-    // метод, генерирующий случайную арифметическую прогрессию чисел
-    // возвращаемая прогрессия содержит от 5 до 10 чисел
+    // method generating random arithmetic progression
+    // contains from 5 to 10 numbers
     public static String[] getProgression() {
         Random random = new Random();
 
-        // генерируем число от 5 до 10
-        // для этого сначала генерируем число от 0 до 5
-        // затем прибавляем к получившемуся числу ещё 5
+        // generating a number from 5 to 10
+        // to do it, first generating a number from 5 to 10
+        // then adding to this number 5
         var numbersCount = random.nextInt(6) + 5;
 
         String[] numbers = new String[numbersCount];
 
-        // генерируем первое число, исключая 0, чтобы не было слишком скучно :)
+        // generating the first number excepting 0 to have more fun :)
         var number = random.nextInt(20) + 1;
         numbers[0] = Integer.toString(number);
 
-        // генерируем шаг прогрессии, также исключая 0
-        // иначе все числа прогрессии были бы одинаковыми
+        // generating a progression step excepting 0 too
+        // otherwise all the numbers will be equals
         var step = random.nextInt(10) + 1;
 
         for (var i = 1; i < numbers.length; i++) {
@@ -44,7 +44,7 @@ public class Progression {
         for (var i = 0; i < questionsCount; i++) {
             var progression = getProgression();
 
-            // генерируем номер числа, которое будем загадывать в игре
+            // generating a position of number that will we think
             var number = random.nextInt(progression.length);
             correctAnswers[i] = progression[number];
 
