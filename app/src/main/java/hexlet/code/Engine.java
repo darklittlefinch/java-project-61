@@ -17,7 +17,7 @@ public class Engine {
             if (answer.equals(correctAnswers[i])) {
                 System.out.println("Correct!");
             } else {
-                String errorTemplate = "'%s' is wrong answer ;(. Correct answer was '%s'";
+                String errorTemplate = "'%s' is wrong answer ;(. Correct answer was '%s'.";
                 System.out.println(String.format(errorTemplate, answer, correctAnswers[i]));
                 System.out.println("Let's try again, " + userName + "!");
                 return;
