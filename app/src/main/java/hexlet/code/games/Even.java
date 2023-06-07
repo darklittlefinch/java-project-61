@@ -5,12 +5,22 @@ import hexlet.code.Engine;
 
 public class Even {
     // method determining is number even
-    public static String isEven(int number) {
+    public static boolean isEven(int number) {
         var remainder = number % 2;
-        if (remainder == 0) {
-            return "yes";
+
+        if (number == 0) {
+            return false;
         }
-        return "no";
+
+        return remainder == 0;
+    }
+
+    public static String getAnswerEven(int number) {
+        if (isEven(number)) {
+            return "yes";
+        } else {
+            return "no";
+        }
     }
 
     public static void startEven(int questionsCount) {
@@ -26,7 +36,7 @@ public class Even {
         for (var i = 0; i < questionsCount; i++) {
             var number = random.nextInt(maxNumber);
             questionsAnswers[i][questionIndex] = Integer.toString(number);
-            questionsAnswers[i][answerIndex] = isEven(number);
+            questionsAnswers[i][answerIndex] = getAnswerEven(number);
         }
 
         Engine.startGame(rules, questionsAnswers);
