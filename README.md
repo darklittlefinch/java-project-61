@@ -4,17 +4,17 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/8a1ef4004fd96354979b/maintainability)](https://codeclimate.com/github/darklittlefinch/java-project-61/maintainability)
 
 # Even
-https://asciinema.org/a/6x8TFSOu3YRmRNinYmjAYwsnq
+[![asciicast](https://asciinema.org/a/6x8TFSOu3YRmRNinYmjAYwsnq.svg)](https://asciinema.org/a/6x8TFSOu3YRmRNinYmjAYwsnq)
 
 # Calculator
-https://asciinema.org/a/r0kaZMDk0vjgZXUy7e618NNeJ
+[![asciicast](https://asciinema.org/a/r0kaZMDk0vjgZXUy7e618NNeJ.svg)](https://asciinema.org/a/r0kaZMDk0vjgZXUy7e618NNeJ)
 
 # GCD
-https://asciinema.org/a/VwfsUBHEQ79kjHYrBCvWUvOZy
+[![asciicast](https://asciinema.org/a/VwfsUBHEQ79kjHYrBCvWUvOZy.svg)](https://asciinema.org/a/VwfsUBHEQ79kjHYrBCvWUvOZy)
 
 # Progression
-https://asciinema.org/a/FvibdN33usFJJf8Kk1KQhBzx1
+[![asciicast](https://asciinema.org/a/FvibdN33usFJJf8Kk1KQhBzx1.svg)](https://asciinema.org/a/FvibdN33usFJJf8Kk1KQhBzx1)
 
 # Prime
-https://asciinema.org/a/E2vDupsj77kbIeOXUEKfEp8TW
+[![asciicast](https://asciinema.org/a/E2vDupsj77kbIeOXUEKfEp8TW.svg)](https://asciinema.org/a/E2vDupsj77kbIeOXUEKfEp8TW)
 
