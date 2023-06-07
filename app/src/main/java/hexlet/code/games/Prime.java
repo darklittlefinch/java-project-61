@@ -18,7 +18,7 @@ public class Prime {
         return dividersCount == 2;
     }
 
-    public static String getAnswer(int number) {
+    public static String getAnswerPrime(int number) {
         if (isPrime(number)) {
             return "yes";
         } else {
@@ -40,7 +40,7 @@ public class Prime {
             var number = random.nextInt(maxNumber) + 1;
 
             questionsAnswers[i][questionIndex] = Integer.toString(number);
-            questionsAnswers[i][answerIndex] = getAnswer(number);
+            questionsAnswers[i][answerIndex] = getAnswerPrime(number);
         }
 
         Engine.startGame(rules, questionsAnswers);
