@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 
 public class Prime {
     // method determining is number prime
-    public static String isPrime(int number) {
+    public static boolean isPrime(int number) {
         var dividersCount = 0;
 
         for (var i = 1; i <= number; i++) {
@@ -15,7 +15,11 @@ public class Prime {
             }
         }
 
-        if (dividersCount == 2) {
+        return dividersCount == 2;
+    }
+
+    public static String getAnswer(int number) {
+        if (isPrime(number)) {
             return "yes";
         } else {
             return "no";
@@ -36,7 +40,7 @@ public class Prime {
             var number = random.nextInt(maxNumber) + 1;
 
             questionsAnswers[i][questionIndex] = Integer.toString(number);
-            questionsAnswers[i][answerIndex] = isPrime(number);
+            questionsAnswers[i][answerIndex] = getAnswer(number);
         }
 
         Engine.startGame(rules, questionsAnswers);
