@@ -8,9 +8,8 @@ public class Calc {
     public static String getOperator() {
         String[] operators = {"+", "-", "*"};
 
-        final var operatorsCount = 3;
         Random random = new Random();
-        var randomNumber = random.nextInt(operatorsCount);
+        var randomNumber = random.nextInt(operators.length);
 
         return operators[randomNumber];
     }
