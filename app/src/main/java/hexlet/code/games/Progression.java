@@ -38,8 +38,10 @@ public class Progression {
 
     public static void startProgression(int questionsCount) {
         var rules = "What number is missing in the progression?";
-        String[] questions = new String[questionsCount];
-        String[] correctAnswers = new String[questionsCount];
+
+        String[][] questionsAnswers = new String[questionsCount][questionsCount];
+        var questionIndex = 0;
+        var answerIndex = 1;
 
         Random random = new Random();
 
@@ -48,12 +50,12 @@ public class Progression {
 
             // generating a position of number that will we think
             var number = random.nextInt(progression.length);
-            correctAnswers[i] = progression[number];
+            questionsAnswers[i][answerIndex] = progression[number];
 
             progression[number] = "..";
-            questions[i] = String.join(" ", progression);
+            questionsAnswers[i][questionIndex] = String.join(" ", progression);
         }
 
-        Engine.startGame(rules, questions, correctAnswers);
+        Engine.startGame(rules, questionsAnswers);
     }
 }

@@ -24,8 +24,10 @@ public class Prime {
 
     public static void startPrime(int questionsCount) {
         var rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[] questions = new String[questionsCount];
-        String[] correctAnswers = new String[questionsCount];
+
+        String[][] questionsAnswers = new String[questionsCount][questionsCount];
+        var questionIndex = 0;
+        var answerIndex = 1;
 
         Random random = new Random();
         final var maxNumber = 100;
@@ -33,10 +35,10 @@ public class Prime {
         for (var i = 0; i < questionsCount; i++) {
             var number = random.nextInt(maxNumber) + 1;
 
-            questions[i] = Integer.toString(number);
-            correctAnswers[i] = isPrime(number);
+            questionsAnswers[i][questionIndex] = Integer.toString(number);
+            questionsAnswers[i][answerIndex] = isPrime(number);
         }
 
-        Engine.startGame(rules, questions, correctAnswers);
+        Engine.startGame(rules, questionsAnswers);
     }
 }

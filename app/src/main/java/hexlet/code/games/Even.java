@@ -15,18 +15,20 @@ public class Even {
 
     public static void startEven(int questionsCount) {
         var rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[] questions = new String[questionsCount];
-        String[] correctAnswers = new String[questionsCount];
+
+        String[][] questionsAnswers = new String[questionsCount][questionsCount];
+        var questionIndex = 0;
+        var answerIndex = 1;
 
         Random random = new Random();
         final var maxNumber = 100;
 
         for (var i = 0; i < questionsCount; i++) {
             var number = random.nextInt(maxNumber);
-            questions[i] = Integer.toString(number);
-            correctAnswers[i] = isEven(number);
+            questionsAnswers[i][questionIndex] = Integer.toString(number);
+            questionsAnswers[i][answerIndex] = isEven(number);
         }
 
-        Engine.startGame(rules, questions, correctAnswers);
+        Engine.startGame(rules, questionsAnswers);
     }
 }

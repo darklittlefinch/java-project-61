@@ -19,8 +19,10 @@ public class Gcd {
 
     public static void startGCD(int questionsCount) {
         var rules = "Find the greatest common divisor of given numbers.";
-        String[] questions = new String[questionsCount];
-        String[] correctAnswers = new String[questionsCount];
+
+        String[][] questionsAnswers = new String[questionsCount][questionsCount];
+        var questionIndex = 0;
+        var answerIndex = 1;
 
         Random random = new Random();
         final var maxNumber = 50;
@@ -29,12 +31,12 @@ public class Gcd {
             var firstNumber = random.nextInt(maxNumber);
             var secondNumber = random.nextInt(maxNumber);
 
-            questions[i] = firstNumber + " " + secondNumber;
+            questionsAnswers[i][questionIndex] = firstNumber + " " + secondNumber;
 
             var gcd = findGCD(firstNumber, secondNumber);
-            correctAnswers[i] = Integer.toString(gcd);
+            questionsAnswers[i][answerIndex] = Integer.toString(gcd);
         }
 
-        Engine.startGame(rules, questions, correctAnswers);
+        Engine.startGame(rules, questionsAnswers);
     }
 }
