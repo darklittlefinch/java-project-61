@@ -14,6 +14,16 @@ public class Calc {
         return operators[randomNumber];
     }
 
+    public static int getAnswerCalc(int firstNumber, int secondNumber, String operator) {
+        if (operator.equals("+")) {
+            return firstNumber + secondNumber;
+        } else if (operator.equals("-")) {
+            return firstNumber - secondNumber;
+        } else {
+            return firstNumber * secondNumber;
+        }
+    }
+
     public static void startCalc(int questionsCount) {
         var rules = "What is the result of the expression?";
 
@@ -29,17 +39,10 @@ public class Calc {
             var secondNumber = random.nextInt(maxNumber);
             var operator = getOperator();
 
-
-
             questionsAnswers[i][questionIndex] = firstNumber + " " + operator + " " + secondNumber;
 
-            if (operator.equals("+")) {
-                questionsAnswers[i][answerIndex] = Integer.toString(firstNumber + secondNumber);
-            } else if (operator.equals("-")) {
-                questionsAnswers[i][answerIndex] = Integer.toString(firstNumber - secondNumber);
-            } else {
-                questionsAnswers[i][answerIndex] = Integer.toString(firstNumber * secondNumber);
-            }
+            var correctAnswer = getAnswerCalc(firstNumber, secondNumber, operator);
+            questionsAnswers[i][answerIndex] = Integer.toString(correctAnswer);
         }
 
         Engine.startGame(rules, questionsAnswers);
