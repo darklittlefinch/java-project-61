@@ -10,11 +10,6 @@ public class Even {
     // method determining is number even
     public static boolean isEven(int number) {
         var remainder = number % 2;
-
-        if (number == 0) {
-            return false;
-        }
-
         return remainder == 0;
     }
 
