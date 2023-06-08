@@ -4,6 +4,9 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Prime {
+    static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    static final int MAX_VALUE = 100;
+
     // method determining is number prime
     public static boolean isPrime(int number) {
         var dividersCount = 0;
@@ -27,22 +30,17 @@ public class Prime {
     }
 
     public static void startPrime(int questionsCount) {
-        var rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
         String[][] questionsAnswers = new String[questionsCount][questionsCount];
-        var questionIndex = 0;
-        var answerIndex = 1;
 
         Random random = new Random();
-        final var maxNumber = 100;
 
         for (var i = 0; i < questionsCount; i++) {
-            var number = random.nextInt(maxNumber) + 1;
+            var number = random.nextInt(MAX_VALUE) + 1;
 
-            questionsAnswers[i][questionIndex] = Integer.toString(number);
-            questionsAnswers[i][answerIndex] = getAnswerPrime(number);
+            questionsAnswers[i][Engine.QUESTION_INDEX] = Integer.toString(number);
+            questionsAnswers[i][Engine.ANSWER_INDEX] = getAnswerPrime(number);
         }
 
-        Engine.startGame(rules, questionsAnswers);
+        Engine.startGame(RULES, questionsAnswers);
     }
 }

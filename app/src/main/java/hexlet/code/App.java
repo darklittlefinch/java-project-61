@@ -8,9 +8,11 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
+    static final int QUESTIONS_COUNT = 3;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        final var questionsCount = 3;
+
 
         System.out.println("Please enter the game number and press Enter.");
 
@@ -38,19 +40,19 @@ public class App {
                 Cli.startGreet();
                 break;
             case even:
-                Even.startEven(questionsCount);
+                Even.startEven(QUESTIONS_COUNT);
                 break;
             case calc:
-                Calc.startCalc(questionsCount);
+                Calc.startCalc(QUESTIONS_COUNT);
                 break;
             case gcd:
-                Gcd.startGCD(questionsCount);
+                Gcd.startGCD(QUESTIONS_COUNT);
                 break;
             case progression:
-                Progression.startProgression(questionsCount);
+                Progression.startProgression(QUESTIONS_COUNT);
                 break;
             case prime:
-                Prime.startPrime(questionsCount);
+                Prime.startPrime(QUESTIONS_COUNT);
                 break;
             case exit:
                 break;

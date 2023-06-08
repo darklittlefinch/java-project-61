@@ -4,14 +4,16 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Calc {
+    static final String RULES = "What is the result of the expression?";
+    static final int MAX_VALUE = 20;
+    static final String[] OPERATORS = {"+", "-", "*"};
+
     // method returning random operator
     public static String getOperator() {
-        String[] operators = {"+", "-", "*"};
-
         Random random = new Random();
-        var randomNumber = random.nextInt(operators.length);
+        var randomNumber = random.nextInt(OPERATORS.length);
 
-        return operators[randomNumber];
+        return OPERATORS[randomNumber];
     }
 
     public static int getAnswerCalc(int firstNumber, int secondNumber, String operator) {
@@ -25,26 +27,21 @@ public class Calc {
     }
 
     public static void startCalc(int questionsCount) {
-        var rules = "What is the result of the expression?";
-
         String[][] questionsAnswers = new String[questionsCount][questionsCount];
-        var questionIndex = 0;
-        var answerIndex = 1;
 
         Random random = new Random();
-        final var maxNumber = 20;
 
         for (var i = 0; i < questionsCount; i++) {
-            var firstNumber = random.nextInt(maxNumber);
-            var secondNumber = random.nextInt(maxNumber);
+            var firstNumber = random.nextInt(MAX_VALUE);
+            var secondNumber = random.nextInt(MAX_VALUE);
             var operator = getOperator();
 
-            questionsAnswers[i][questionIndex] = firstNumber + " " + operator + " " + secondNumber;
+            questionsAnswers[i][Engine.QUESTION_INDEX] = firstNumber + " " + operator + " " + secondNumber;
 
             var correctAnswer = getAnswerCalc(firstNumber, secondNumber, operator);
-            questionsAnswers[i][answerIndex] = Integer.toString(correctAnswer);
+            questionsAnswers[i][Engine.ANSWER_INDEX] = Integer.toString(correctAnswer);
         }
 
-        Engine.startGame(rules, questionsAnswers);
+        Engine.startGame(RULES, questionsAnswers);
     }
 }

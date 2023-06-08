@@ -4,6 +4,9 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Gcd {
+    static final String RULES = "Find the greatest common divisor of given numbers.";
+    static final int MAX_VALUE = 50;
+
     // method finding GCD of two numbers
     public static int findGCD(int firstNumber, int secondNumber) {
         var gcd = 1;
@@ -18,25 +21,20 @@ public class Gcd {
     }
 
     public static void startGCD(int questionsCount) {
-        var rules = "Find the greatest common divisor of given numbers.";
-
         String[][] questionsAnswers = new String[questionsCount][questionsCount];
-        var questionIndex = 0;
-        var answerIndex = 1;
 
         Random random = new Random();
-        final var maxNumber = 50;
 
         for (var i = 0; i < questionsCount; i++) {
-            var firstNumber = random.nextInt(maxNumber);
-            var secondNumber = random.nextInt(maxNumber);
+            var firstNumber = random.nextInt(MAX_VALUE);
+            var secondNumber = random.nextInt(MAX_VALUE);
 
-            questionsAnswers[i][questionIndex] = firstNumber + " " + secondNumber;
+            questionsAnswers[i][Engine.QUESTION_INDEX] = firstNumber + " " + secondNumber;
 
             var gcd = findGCD(firstNumber, secondNumber);
-            questionsAnswers[i][answerIndex] = Integer.toString(gcd);
+            questionsAnswers[i][Engine.ANSWER_INDEX] = Integer.toString(gcd);
         }
 
-        Engine.startGame(rules, questionsAnswers);
+        Engine.startGame(RULES, questionsAnswers);
     }
 }

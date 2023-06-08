@@ -4,6 +4,9 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Even {
+    static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    static final int MAX_VALUE = 100;
+
     // method determining is number even
     public static boolean isEven(int number) {
         var remainder = number % 2;
@@ -24,21 +27,16 @@ public class Even {
     }
 
     public static void startEven(int questionsCount) {
-        var rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-
         String[][] questionsAnswers = new String[questionsCount][questionsCount];
-        var questionIndex = 0;
-        var answerIndex = 1;
 
         Random random = new Random();
-        final var maxNumber = 100;
 
         for (var i = 0; i < questionsCount; i++) {
-            var number = random.nextInt(maxNumber);
-            questionsAnswers[i][questionIndex] = Integer.toString(number);
-            questionsAnswers[i][answerIndex] = getAnswerEven(number);
+            var number = random.nextInt(MAX_VALUE);
+            questionsAnswers[i][Engine.QUESTION_INDEX] = Integer.toString(number);
+            questionsAnswers[i][Engine.ANSWER_INDEX] = getAnswerEven(number);
         }
 
-        Engine.startGame(rules, questionsAnswers);
+        Engine.startGame(RULES, questionsAnswers);
     }
 }
