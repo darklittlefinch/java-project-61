@@ -9,15 +9,20 @@ public class Gcd {
 
     // method finding GCD of two numbers
     public static int findGCD(int firstNumber, int secondNumber) {
-        var gcd = 1;
+        var minValue = Math.min(firstNumber, secondNumber);
+        var maxValue = Math.max(firstNumber, secondNumber);
 
-        for (var i = 1; i <= firstNumber && i <= secondNumber; i++) {
+        if (minValue == 0) {
+            return maxValue;
+        }
+
+        for (var i = minValue; i > 1; i--) {
             if (firstNumber % i == 0 && secondNumber % i == 0) {
-                gcd = i;
+                return i;
             }
         }
 
-        return gcd;
+        return 1;
     }
 
     public static void startGCD(int questionsCount) {
@@ -26,7 +31,9 @@ public class Gcd {
         Random random = new Random();
 
         for (var i = 0; i < questionsCount; i++) {
-            var firstNumber = random.nextInt(MAX_VALUE);
+
+            // excepting 0 value in one of number because of inability to answer with a number
+            var firstNumber = random.nextInt(MAX_VALUE) + 1;
             var secondNumber = random.nextInt(MAX_VALUE);
 
             questionsAnswers[i][Engine.QUESTION_INDEX] = firstNumber + " " + secondNumber;
