@@ -8,7 +8,6 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
-    static final int QUESTIONS_COUNT = 3;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -37,22 +36,22 @@ public class App {
 
         switch (gameNumber) {
             case greet:
-                Cli.startGreet();
+                Engine.startGreet();
                 break;
             case even:
-                Even.startEven(QUESTIONS_COUNT);
+                Even.startEven();
                 break;
             case calc:
-                Calc.startCalc(QUESTIONS_COUNT);
+                Calc.startCalc();
                 break;
             case gcd:
-                Gcd.startGCD(QUESTIONS_COUNT);
+                Gcd.startGCD();
                 break;
             case progression:
-                Progression.startProgression(QUESTIONS_COUNT);
+                Progression.startProgression();
                 break;
             case prime:
-                Prime.startPrime(QUESTIONS_COUNT);
+                Prime.startPrime();
                 break;
             case exit:
                 break;

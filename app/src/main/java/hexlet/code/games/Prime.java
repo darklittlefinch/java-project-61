@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
     static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -29,13 +29,12 @@ public class Prime {
         }
     }
 
-    public static void startPrime(int questionsCount) {
-        String[][] questionsAnswers = new String[questionsCount][questionsCount];
+    public static void startPrime() {
+        var qsCount = Engine.QUESTIONS_COUNT;
+        String[][] questionsAnswers = new String[qsCount][qsCount];
 
-        Random random = new Random();
-
-        for (var i = 0; i < questionsCount; i++) {
-            var number = random.nextInt(MAX_VALUE) + 1;
+        for (var i = 0; i < qsCount; i++) {
+            var number = Utils.getRandomIntExceptZero(MAX_VALUE);
 
             questionsAnswers[i][Engine.QUESTION_INDEX] = Integer.toString(number);
             questionsAnswers[i][Engine.ANSWER_INDEX] = getAnswerPrime(number);

@@ -1,12 +1,13 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+import java.util.Random;
 
 public class Progression {
     static final String RULES = "What number is missing in the progression?";
-    static final int RANGE_OF_COUNT = 6;
     static final int MIN_NUMBERS_COUNT = 5;
+    static final int MAX_NUMBERS_COUNT = 10;
     static final int MAX_STEP_VALUE = 10;
     static final int MAX_FIRST_NUMBER_VALUE = 20;
 
@@ -25,19 +26,19 @@ public class Progression {
         return numbers;
     }
 
-    public static void startProgression(int questionsCount) {
-        String[][] questionsAnswers = new String[questionsCount][questionsCount];
+    public static void startProgression() {
+        var qsCount = Engine.QUESTIONS_COUNT;
+        String[][] questionsAnswers = new String[qsCount][qsCount];
 
-        Random random = new Random();
-
-        for (var i = 0; i < questionsCount; i++) {
-            var numbersCount = random.nextInt(RANGE_OF_COUNT) + MIN_NUMBERS_COUNT;
-            var step = random.nextInt(MAX_STEP_VALUE) + 1;
-            var firstNumber = random.nextInt(MAX_FIRST_NUMBER_VALUE) + 1;
+        for (var i = 0; i < qsCount; i++) {
+            var numbersCount = Utils.getRandomInt(MIN_NUMBERS_COUNT, MAX_NUMBERS_COUNT);
+            var step = Utils.getRandomIntExceptZero(MAX_STEP_VALUE);
+            var firstNumber = Utils.getRandomIntExceptZero(MAX_FIRST_NUMBER_VALUE);
 
             var progression = getProgression(numbersCount, step, firstNumber);
 
-            // generating a position of number that will we think
+            // generating position of number that will we think
+            Random random = new Random();
             var number = random.nextInt(progression.length);
             questionsAnswers[i][Engine.ANSWER_INDEX] = progression[number];
 
