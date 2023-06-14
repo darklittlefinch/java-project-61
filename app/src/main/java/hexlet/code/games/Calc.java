@@ -17,7 +17,7 @@ public class Calc {
         return OPERATORS[randomNumber];
     }
 
-    public static int getAnswerCalc(int firstNumber, int secondNumber, String operator){
+    public static int getAnswerCalc(int firstNumber, int secondNumber, String operator) {
 
         int result = switch (operator) {
             case "+" -> firstNumber + secondNumber;

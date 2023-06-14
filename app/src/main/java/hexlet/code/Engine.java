@@ -6,19 +6,18 @@ public class Engine {
     public static final int QUESTIONS_COUNT = 3;
     public static final int QUESTION_INDEX = 0;
     public static final int ANSWER_INDEX = 1;
-    static String userName;
+    private static String userName;
 
-    public static String getUserName() {
+    public static void getUserName() {
         Scanner scanner = new Scanner(System.in);
         userName = scanner.next();
-        return userName;
     }
 
     public static void startGreet() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 
-        String userName = getUserName();
+        getUserName();
 
         System.out.println("Hello, " + userName + "!");
     }
