@@ -23,7 +23,7 @@ public class Calc {
             case "+" -> firstNumber + secondNumber;
             case "-" -> firstNumber - secondNumber;
             case "*" -> firstNumber * secondNumber;
-            default -> 0;
+            default -> throw new Error("Unknown operator :(");
         };
 
         return result;
